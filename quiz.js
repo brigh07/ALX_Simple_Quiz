@@ -9,9 +9,7 @@ function checkAnswer() {
     return;
   }
 
-  const selectedAnswer = userAnswer.value;
-
-  if (selectedAnswer === correctAnswer) {
+  if (userAnswer.value === correctAnswer) {
     document.getElementById('feedback').textContent = 'Correct!';
     document.getElementById('feedback').style.color = 'green';
   } else {
@@ -21,5 +19,4 @@ function checkAnswer() {
 }
 
 submitButton.addEventListener('click', checkAnswer);
-
 
