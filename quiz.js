@@ -1,25 +1,22 @@
-const submitButton = document.getElementById('submit-answer');
+document.getElementById("submit-answer").addEventListener("click", function () {
+    const choices = document.getElementsByName("quiz");
+    let selected = null;
+    for (const choice of choices) {
+        if (choice.checked) {
+            selected = choice.value;
+            break;
+        }
+    }
 
-function checkAnswer() {
-  const correctAnswer = '4';
-  const userAnswer = document.querySelector('input[name="quiz"]:checked');
-  
-  if (userAnswer === null) {
-    document.getElementById('feedback').textContent = 'Please select an answer.';
-    return;
-  }
-
-  let selected = userAnswer.value;
-  let userCheck = selected;
-  let correctCheck = correctAnswer;
-
-  if (userCheck === correctCheck) {
-    document.getElementById('feedback').textContent = 'Correct!';
-    document.getElementById('feedback').style.color = 'green';
-  } else {
-    document.getElementById('feedback').textContent = `Incorrect! The correct answer is ${correctAnswer}.`;
-    document.getElementById('feedback').style.color = 'red';
-  }
-}
-
-submitButton.addEventListener('click', checkAnswer);
+    const feedback = document.getElementById("feedback");
+    if (selected === null) {
+        feedback.textContent = "Please select an answer.";
+        feedback.style.color = "orange";
+    } else if (selected === "4") {
+      feedback.textContent = "Correct!";
+        feedback.style.color = "green";
+    } else {
+        feedback.textContent = "Incorrect. Try again!";
+        feedback.style.color = "red";
+    }
+});
