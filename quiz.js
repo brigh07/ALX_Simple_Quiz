@@ -1,4 +1,4 @@
-document.getElementById('submit-answer').addEventListener('click', function() {
+function checkAnswer() {
   const correctAnswer = '4';
   const selectedAnswer = document.querySelector('input[name="quiz"]:checked').value;
   const feedback = document.getElementById('feedback');
@@ -10,4 +10,6 @@ document.getElementById('submit-answer').addEventListener('click', function() {
     feedback.textContent = `Incorrect! The correct answer is ${correctAnswer}.`;
     feedback.style.color = 'red';
   }
-});
+}
+
+document.getElementById('submit-answer').addEventListener('click', checkAnswer);
