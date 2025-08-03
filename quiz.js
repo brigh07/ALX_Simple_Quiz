@@ -9,7 +9,10 @@ function checkAnswer() {
     return;
   }
 
-  if (userAnswer.value === correctAnswer) {
+  let answer = userAnswer.value;
+  let correct = answer === correctAnswer;
+
+  if (correct) {
     document.getElementById('feedback').textContent = 'Correct!';
     document.getElementById('feedback').style.color = 'green';
   } else {
@@ -19,5 +22,3 @@ function checkAnswer() {
 }
 
 submitButton.addEventListener('click', checkAnswer);
-
-
