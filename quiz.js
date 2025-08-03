@@ -1,3 +1,5 @@
+const submitButton = document.getElementById('submit-answer');
+
 function checkAnswer() {
   const correctAnswer = '4';
   const userAnswer = document.querySelector('input[name="quiz"]:checked');
@@ -18,4 +20,6 @@ function checkAnswer() {
   }
 }
 
-document.getElementById('submit-answer').addEventListener('click', checkAnswer);
+submitButton.addEventListener('click', checkAnswer);
+
+
