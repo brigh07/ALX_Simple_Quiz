@@ -19,4 +19,3 @@ function checkAnswer() {
 }
 
 submitButton.addEventListener('click', checkAnswer);
-
