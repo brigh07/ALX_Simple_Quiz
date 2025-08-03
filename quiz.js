@@ -9,7 +9,8 @@ function checkAnswer() {
     return;
   }
 
-  if (userAnswer.value === correctAnswer) {
+  let userSelected = userAnswer.value;
+  if (userSelected === correctAnswer) {
     document.getElementById('feedback').textContent = 'Correct!';
     document.getElementById('feedback').style.color = 'green';
   } else {
