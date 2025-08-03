@@ -9,10 +9,11 @@ function checkAnswer() {
     return;
   }
 
-  let answer = userAnswer.value;
-  let correct = answer === correctAnswer;
+  let selected = userAnswer.value;
+  let userCheck = selected;
+  let correctCheck = correctAnswer;
 
-  if (correct) {
+  if (userCheck === correctCheck) {
     document.getElementById('feedback').textContent = 'Correct!';
     document.getElementById('feedback').style.color = 'green';
   } else {
