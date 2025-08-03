@@ -1,22 +1,19 @@
-document.getElementById("submit-answer").addEventListener("click", function () {
-    const choices = document.getElementsByName("quiz");
-    let selected = null;
-    for (const choice of choices) {
-        if (choice.checked) {
-            selected = choice.value;
-            break;
-        }
-    }
+function checkAnswer() {
+    const correctAnswer = "4";
+    const selectedOption = document.querySelector('input[name="quiz"]:checked');
 
-    const feedback = document.getElementById("feedback");
-    if (selected === null) {
-        feedback.textContent = "Please select an answer.";
-        feedback.style.color = "orange";
-    } else if (selected === "4") {
-      feedback.textContent = "Correct!";
-        feedback.style.color = "green";
+    if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const feedback = document.getElementById("feedback");
+
+        if (userAnswer === correctAnswer) {
+            feedback.textContent = "Correct! Well done.";
+        } else {
+            feedback.textContent = "That's incorrect. Try again!";
+        }
     } else {
-        feedback.textContent = "Incorrect. Try again!";
-        feedback.style.color = "red";
+        document.getElementById("feedback").textContent = "Please select an answer.";
     }
-});
+}
+
+document.getElementById("submit-answer").addEventListener("click", checkAnswer);
